@@ -1,0 +1,6 @@
+{
+  "name": "創峰科技 ApexTech",
+  "description": "創峰科技 ApexTech 企業官方網站 - 數位轉型，驅動企業未來無限可能。提供雲端託管、AI 智能數據分析與企業資安合規解決方案。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
