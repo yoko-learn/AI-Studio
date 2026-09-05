@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <!-- 引入本地 Bootstrap 5 (請確保路徑正確) -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>   
+
+</head>
+<body>
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">First name</label>
+    <input type="text" class="form-control " id="validationServer01" value="Mark" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer02" class="form-label">Last name</label>
+    <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServerUsername" class="form-label">Username</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend3">@</span>
+      <input type="text" class="form-control " id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationServer03" class="form-label">City</label>
+    <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+    <div id="validationServer03Feedback" class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationServer04" class="form-label">State</label>
+    <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+      <option selected disabled value="">Choose...</option>
+      <option>...</option>
+    </select>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationServer05" class="form-label">Zip</label>
+    <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+    <div id="validationServer05Feedback" class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions
+      </label>
+      <div id="invalidCheck3Feedback" class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
+ <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+ </script>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">輸入密碼</span>
+
+  <input 
+    type="password" 
+    class="form-control" 
+    id="passwordInput"
+  >
+
+  <button 
+    class="btn btn-outline-secondary" 
+    type="button" 
+    id="button-addon2"
+  >
+    <i class="fa-solid fa-eye"></i>
+  </button>
+</div>
+
+<script>
+  const passwordInput = document.querySelector('#passwordInput');
+  const eyeButton = document.querySelector('#button-addon2');
+
+  eyeButton.addEventListener('click', function () {
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+
+  });
+</script>
+
+===================================================
+
+<div class="input-group mb-3">
+  <span class="input-group-text">輸入密碼</span>
+
+  <input 
+    type="password" 
+    class="form-control" 
+    id="passwordInput"
+  >
+
+  <button 
+    class="btn btn-outline-secondary" 
+    type="button" 
+    id="button-addon2"
+  >
+    <i class="fa-solid fa-eye-slash"></i>
+  </button>
+</div>
+
+
+<script>const passwordInput = document.querySelector('#passwordInput');
+const eyeButton = document.querySelector('#button-addon2');
+const eyeIcon = eyeButton.querySelector('i');
+
+eyeButton.addEventListener('click', function () {
+
+  if (passwordInput.type === 'password') {
+
+    // 顯示密碼
+    passwordInput.type = 'text';
+
+    // 變成張開的眼睛
+    eyeIcon.classList.remove('fa-eye-slash');
+    eyeIcon.classList.add('fa-eye');
+
+  } else {
+
+    // 隱藏密碼
+    passwordInput.type = 'password';
+
+    // 變成閉上的眼睛
+    eyeIcon.classList.remove('fa-eye');
+    eyeIcon.classList.add('fa-eye-slash');
+
+  }
+
+});</script>
+
+
+<div class="mb-3"> 
+  <label for="exampleFormControlTextarea1" class="form-label">
+    Example textarea
+  </label> 
+
+  <textarea 
+    class="form-control" 
+    id="exampleFormControlTextarea1" 
+    rows="3"
+    maxlength="200">
+  </textarea> 
+
+  <div class="form-text text-end" id="wordCount">
+    0/200
+  </div> 
+</div>
+
+<script>
+  const textarea = document.querySelector('#exampleFormControlTextarea1');
+const wordCount = document.querySelector('#wordCount');
+
+textarea.addEventListener('input', function () {
+
+  const count = textarea.value.length;
+
+  wordCount.textContent = count + '/200';
+
+});
+</script>
+==================================================
+ <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Add user</button>
+  </div>
+
+
+<form class="row g-2">
+  <div class="col-auto">
+    <label for="staticEmail2" class="visually-hidden">Email</label>
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+  </div>
+  <div class="col-auto">
+    <label for="inputPassword2" class="visually-hidden">Password</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-danger mb-3">Delete</button>
+  </div>
+</form>
+
+================================================
+
+<!-- Add user 按鈕 -->
+<div class="col-auto">
+  <button type="button" class="btn btn-primary mb-3" id="addUser">
+    Add user
+  </button>
+</div>
+
+
+<!-- 使用者資料放這裡 -->
+<div id="userList">
+
+  <form class="row g-2 user-row">
+    <div class="col-auto">
+      <label class="visually-hidden">Email</label>
+      <input
+        type="text"
+        readonly
+        class="form-control-plaintext"
+        value="email@example.com"
+      >
+    </div>
+
+    <div class="col-auto">
+      <label class="visually-hidden">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+      >
+    </div>
+
+    <div class="col-auto">
+      <button type="button" class="btn btn-danger mb-3 deleteBtn">
+        Delete
+      </button>
+    </div>
+  </form>
+
+</div>
+
+<script>
+  const addUser = document.querySelector('#addUser');
+const userList = document.querySelector('#userList');
+
+
+addUser.addEventListener('click', function () {
+
+  const newRow = document.createElement('form');
+
+  newRow.className = 'row g-2 user-row';
+
+  newRow.innerHTML = `
+    <div class="col-auto">
+      <input
+        type="text"
+        readonly
+        class="form-control-plaintext"
+        value="email@example.com"
+      >
+    </div>
+
+    <div class="col-auto">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+      >
+    </div>
+
+    <div class="col-auto">
+      <button type="button" class="btn btn-danger mb-3 deleteBtn">
+        Delete
+      </button>
+    </div>
+  `;
+
+  userList.appendChild(newRow);
+
+});
+
+
+userList.addEventListener('click', function (event) {
+
+  if (event.target.classList.contains('deleteBtn')) {
+
+    const row = event.target.closest('.user-row');
+
+    row.remove();
+
+  }
+
+});
+</script>
+
+</body>
+</html>
